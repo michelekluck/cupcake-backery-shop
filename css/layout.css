@@ -16,7 +16,7 @@
 }
 
 .sidebar a.active {
-    background-color: rg(81, 92, 104);
+    background-color: rgb(81, 92, 104);
     color: white;
 }
 
