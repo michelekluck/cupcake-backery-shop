@@ -49,7 +49,7 @@
         </div>
 
         <script>
-            function mascaraTelefone(event) {
+            function mascaraTelefone(event) { //Valida o campo de telefone, com expressão regular: (xx) xxxx-xxxx ou (xx) xxxxx-xxxx
                 let tecla = event.key;
                 let telefone = event.target.value.replace(/\D+/g, "");
                 if (/^[0-9]$/i.test(tecla)) {
