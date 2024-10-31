@@ -25,34 +25,34 @@
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor1.png">
                 <div class="titleCup">Baunilha com Morango</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor1Button" >
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor1');" >
             </div>
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor2.png">
                 <div class="titleCup">Beijinho com Tutti Frutti</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor2Button">
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor2');">
             </div>
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor3.png">
                 <div class="titleCup">Cenoura americano</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor3Button">
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor3');">
             </div>
         </div>
         <div class="second"> <!--Segundas 3 imagens-->
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor4.png">
                 <div class="titleCup">Chocolate</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor4Button">
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor4');">
             </div>
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor5.png">
                 <div class="titleCup">Baunilha</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor5Button">
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor5');">
             </div>
             <div class="menu">
                 <img class="imgStamp" src="img/CupFlavor6.png">
                 <div class="titleCup">Red Velvet</div>
-                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor6Button">
+                <input class="modalButton" type="button" value="Saiba mais..." onclick="openModal('CupFlavor6');">
             </div>
         </div>
     </div>
@@ -60,7 +60,7 @@
     <!--Modal detalhes-->
     <div id="knowMore" class="modal">
         <header>
-            <span id="closeModalButton" class="topright">X</span>
+            <span onclick="closeModal()" class="topright">X</span>
         </header>
         <div>
             <p id="txt1" class="infoH"></p>
