@@ -47,24 +47,32 @@ function closeModal() {
     document.getElementById("knowMore").style.display = 'none';
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("CupFlavor1Button").addEventListener("click", function() {
-        openModal("CupFlavor1");
-    });
-    document.getElementById("CupFlavor2Button").addEventListener("click", function() {
-        openModal("CupFlavor2");
-    });
-    document.getElementById("CupFlavor3Button").addEventListener("click", function() {
-        openModal("CupFlavor3");
-    });
-    document.getElementById("CupFlavor4Button").addEventListener("click", function() {
-        openModal("CupFlavor4");
-    });
-    document.getElementById("CupFlavor5Button").addEventListener("click", function() {
-        openModal("CupFlavor5");
-    });
-    document.getElementById("CupFlavor6Button").addEventListener("click", function() {
-        openModal("CupFlavor6");
-    });
-    document.getElementById("closeModalButton").addEventListener("click", closeModal);
+
+function mascaraTelefone(event) {
+  // Remove todos os caracteres que não sejam dígitos
+  let telefone = event.target.value.replace(/\D+/g, "");
+
+  // Limita o número de dígitos para 11 (formato: (XX) XXXXX-XXXX)
+  telefone = telefone.substring(0, 11);
+
+  // Aplica a máscara conforme o número de dígitos
+  if (telefone.length > 10) {
+    telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+  } else if (telefone.length > 6) {
+    telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+  } else if (telefone.length > 2) {
+    telefone = telefone.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+  } else {
+    telefone = telefone.replace(/^(\d*)/, "($1");
+  }
+
+  // Atualiza o valor do campo com o telefone formatado
+  event.target.value = telefone;
+}
+
+// Adiciona o event listener ao campo de telefone
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("celular")
+    .addEventListener("input", mascaraTelefone);
 });

@@ -1,85 +1,104 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Front-end</title>
-        <link rel="stylesheet" href="css/layout.css" type="text/css">
-        <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
-        </style>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Front-end</title>
+    <link rel="stylesheet" href="css/layout.css" type="text/css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap");
+    </style>
+  </head>
 
-    <body>
+  <body>
+    <div class="sidebar">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </div>
 
-        <div class="sidebar">
-            <a href="index.html">Home</a>
-            <a href="news.html">News</a>
-            <a class="active" href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-        </div>
-        
-        <div class="content">
-            <h2 class="titleTop">Cupcake Backery Shop</h2>
-            <h3 class="titleBottom">Deixe seu contato!</h3>
-            <div class="contact-form">
-                <form method="POST" action="contact.html"> 
-                    <!--POST -> os dados dos formularios serão enviados via protocolo HTTP-->
-                    <div class="form-group">
-                        <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
-                        <input type="text" name="name" id="name" placeholder="Seu nome" required>
-                    </div><br>
-                    <div class="form-group">
-                        <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
-                        <input type="email" name="email" id="email" placeholder="Seu Email" required>
-                    </div><br>
-                    <div class="form-group">
-                        <label for="celular"><i class="fa fa-phone" aria-hidden="true"></i></label>
-                        <input type="tel" name="celular" id="celular" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" placeholder="Seu celular" title="(xx) xxxxx-xxxx" required>
-                    </div><br>
-                    <div class="form-group">
-                        <label for="dt_nasc"><i class="fa fa-birthday-cake" aria-hidden="true"></i></label>
-                        <input type="date" name="dt_nasc" id="dt_nasc" title="Data de Nascimento">
-                    </div><br>
-                    <div class="form-group">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>Eu concordo com os <a href="#" class="term-service">termos de serviço</a></label>
-                    </div><br>
-                    <div class="form-group form-button">
-                        <input type="submit" class="form-submit" value="Enviar">
-                        <input type="reset" class="form-submit" value="Limpar">
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="content">
+      <h2 class="titleTop">Cupcake Backery Shop</h2>
+      <h3 class="titleBottom">Deixe seu contato!</h3>
+      <div class="contact-form">
+        <form method="POST" action="contact.html">
+          <!--POST -> os dados dos formularios serão enviados via protocolo HTTP-->
+          <div class="form-group">
+            <label for="name"
+              ><i class="fa fa-user" aria-hidden="true"></i
+            ></label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Seu nome"
+              required
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="email"
+              ><i class="fa fa-envelope" aria-hidden="true"></i
+            ></label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Seu Email"
+              required
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="celular"
+              ><i class="fa fa-phone" aria-hidden="true"></i
+            ></label>
+            <input
+              type="phone"
+              name="celular"
+              id="celular"
+              pattern="\(\d{2}\)\s\d{4,5}-\d{4}$"
+              onkeydown="return mascaraTelefone(event)"
+              placeholder="Seu celular"
+              title="(xx) xxxxx-xxxx"
+              required
+            />
+            <!--onkeydown -> quando uma tecla for pressionada-->
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="dt_nasc"
+              ><i class="fa fa-birthday-cake" aria-hidden="true"></i
+            ></label>
+            <input
+              type="date"
+              name="dt_nasc"
+              id="dt_nasc"
+              title="Data de Nascimento"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="agree-term"
+              id="agree-term"
+              class="agree-term"
+              required
+            />
+            <label for="agree-term" class="label-agree-term"
+              ><span><span></span></span>Eu concordo com os
+              <a href="#" class="term-service">termos de serviço</a></label
+            >
+          </div>
+          <br />
+          <div class="form-group form-button">
+            <input type="submit" class="form-submit" value="Enviar" />
+            <input type="reset" class="form-submit" value="Limpar" />
+          </div>
+        </form>
+      </div>
+    </div>
 
-        <script>
-            function mascaraTelefone(event) { //Valida o campo de telefone, com expressão regular: (xx) xxxx-xxxx ou (xx) xxxxx-xxxx
-                let tecla = event.key;
-                let telefone = event.target.value.replace(/\D+/g, "");
-                if (/^[0-9]$/i.test(tecla)) {
-                    telefone = telefone + tecla;
-                    let tamanho = telefone.length;
-                    if (tamanho >= 12) {
-                        return false;
-                    }
-                    if (tamanho > 10) {
-                        telefone = telefone.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-                    } else if (tamanho > 5){
-                        telefone = telefone.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-                    } else if (tamanho > 2) {
-                        telefone = telefone.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-                    } else {
-                        telefone = telefone.replace(/^(\d*)/, "($1");
-                    }
-                    event.target.value = telefone;
-                }
-                if (!["Backspace", "Delete", "Tab"].includes(tecla)) {
-                    return false;
-                }
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById('celular').addEventListener('keydown', mascaraTelefone);
-            });
-        </script>
-    </body>
+    <script src="script/script.js"></script>
+  </body>
 </html>
